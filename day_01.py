@@ -1,6 +1,14 @@
 #!/usr/bin/python3
 """ Day 1: Report Repair """
-from common import read_input
+from aocd import get_data
+
+
+def parse_input(puzzle_data):
+    """ Format the data from aocd """
+    output = list()
+    for line in puzzle_data.split("\n"):
+        output.append(int(line))
+    return output
 
 
 def find_two_expenses(expenses, year):
@@ -22,7 +30,6 @@ def find_three_expenses(expenses, year):
 
 
 if __name__ == "__main__":
-    PUZZLE_INPUT = read_input("day_01.txt")
-    PUZZLE_INPUT = [int(i) for i in PUZZLE_INPUT]
+    PUZZLE_INPUT = parse_input(get_data(day=1))
     print(find_two_expenses(PUZZLE_INPUT, 2020))
     print(find_three_expenses(PUZZLE_INPUT, 2020))
