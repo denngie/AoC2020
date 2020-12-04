@@ -23,19 +23,19 @@ def count_valid_passports(passports):
     for passport in passports:
         if (len(passport) == 8 or
                 (len(passport) == 7 and "cid" not in passport)):
-            if not 1920 <= int(passport["byr"]) <= 2002:
+            if int(passport["byr"]) not in range(1920, 2003):
                 continue
-            if not 2010 <= int(passport["iyr"]) <= 2020:
+            if int(passport["iyr"]) not in range(2010, 2021):
                 continue
-            if not 2020 <= int(passport["eyr"]) <= 2030:
-                continue
-            if not passport["hgt"][-2:] in ["cm", "in"]:
+            if int(passport["eyr"]) not in range(2020, 2031):
                 continue
             if ("cm" in passport["hgt"][-2:] and
-                    not 150 <= int(passport["hgt"][:-2]) <= 193):
+                    int(passport["hgt"][:-2]) not in range(150, 194)):
                 continue
             if ("in" in passport["hgt"][-2:] and
-                    not 59 <= int(passport["hgt"][:-2]) <= 76):
+                    int(passport["hgt"][:-2]) not in range(59, 77)):
+                continue
+            if not passport["hgt"][-2:] in ["cm", "in"]:
                 continue
             if not re_search(r"^#[0-9a-f]{6}$", passport["hcl"]):
                 continue
