@@ -16,11 +16,10 @@ def calculate_collisions(toboggan_map, step_x, step_y):
     count = 0
     posx = step_x
     for line in toboggan_map[1:]:
-        if step_y > 1 and toboggan_map.index(line) % step_y != 0:
-            continue
-        if line[posx % len(line)] == "#":
-            count += 1
-        posx += step_x
+        if toboggan_map.index(line) % step_y == 0:
+            if line[posx % len(line)] == "#":
+                count += 1
+            posx += step_x
     return count
 
 
