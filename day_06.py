@@ -28,8 +28,12 @@ def calculate_correct_answers(puzzle_data):
     return sum(group_answers)
 
 
+def main():
+    """ Solve the puzzle """
+    puzzle_input = parse_input(get_data(day=6))
+    print(calculate_answers(puzzle_input))
+    print(calculate_correct_answers(puzzle_input))
+
+
 if __name__ == "__main__":
-    PUZZLE_INPUT = parse_input(get_data(day=6))
-    # PUZZLE_INPUT = parse_input("abc\n\na\nb\nc\n\nab\nac\n\na\na\na\na\n\nb")
-    print(calculate_answers(PUZZLE_INPUT))
-    print(calculate_correct_answers(PUZZLE_INPUT))
+    main()

@@ -38,7 +38,12 @@ def validate_passwords2(password_list):
     return count
 
 
+def main():
+    """ Solve the puzzle """
+    puzzle_input = parse_input(get_data(day=2))
+    print(validate_passwords(puzzle_input))
+    print(validate_passwords2(puzzle_input))
+
+
 if __name__ == "__main__":
-    PUZZLE_INPUT = parse_input(get_data(day=2))
-    print(validate_passwords(PUZZLE_INPUT))
-    print(validate_passwords2(PUZZLE_INPUT))
+    main()

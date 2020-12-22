@@ -23,9 +23,14 @@ def calculate_collisions(toboggan_map, step_x, step_y):
     return count
 
 
+def main():
+    """ Solve the puzzle """
+    puzzle_input = parse_input(get_data(day=3))
+    answer = 1
+    for step_x, step_y in [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]:
+        answer = answer * calculate_collisions(puzzle_input, step_x, step_y)
+    print(answer)
+
+
 if __name__ == "__main__":
-    PUZZLE_INPUT = parse_input(get_data(day=3))
-    ANSWER = 1
-    for x, y in [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]:
-        ANSWER = ANSWER * calculate_collisions(PUZZLE_INPUT, x, y)
-    print(ANSWER)
+    main()

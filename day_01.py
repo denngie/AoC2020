@@ -29,7 +29,12 @@ def find_three_expenses(expenses, year):
     return None
 
 
+def main():
+    """ Solve the puzzle """
+    puzzle_input = parse_input(get_data(day=1))
+    print(find_two_expenses(puzzle_input, 2020))
+    print(find_three_expenses(puzzle_input, 2020))
+
+
 if __name__ == "__main__":
-    PUZZLE_INPUT = parse_input(get_data(day=1))
-    print(find_two_expenses(PUZZLE_INPUT, 2020))
-    print(find_three_expenses(PUZZLE_INPUT, 2020))
+    main()

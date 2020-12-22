@@ -49,6 +49,11 @@ def count_valid_passports(passports):
     return count
 
 
+def main():
+    """ Solve the puzzle """
+    puzzle_input = parse_input(get_data(day=4))
+    print(count_valid_passports(puzzle_input))
+
+
 if __name__ == "__main__":
-    PUZZLE_INPUT = parse_input(get_data(day=4))
-    print(count_valid_passports(PUZZLE_INPUT))
+    main()

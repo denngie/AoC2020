@@ -37,8 +37,11 @@ def find_missing_id(seat_list):
         return seat_id
 
 
+def main():
+    """ Solve the puzzle """
+    puzzle_input = parse_input(get_data(day=5))
+    print(find_missing_id(puzzle_input))
+
+
 if __name__ == "__main__":
-    PUZZLE_INPUT = parse_input(get_data(day=5))
-    # PUZZLE_INPUT = parse_input("FBFBBFFRLR\nBFFFBBFRRR\n"
-    #                            "FFFBBBFRRR\nBBFFBBFRLL")
-    print(find_missing_id(PUZZLE_INPUT))
+    main()
