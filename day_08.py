@@ -66,15 +66,6 @@ def process_instructions(code):
 
 def main():
     """ Solve the puzzle """
-    puzzle_input = parse_input("nop +0\n"
-                               "acc +1\n"
-                               "jmp +4\n"
-                               "acc +3\n"
-                               "jmp -3\n"
-                               "acc -99\n"
-                               "acc +1\n"
-                               "jmp -4\n"
-                               "acc +6")
     puzzle_input = parse_input(get_data(day=8))
     print(fix_instruction(puzzle_input))
 
